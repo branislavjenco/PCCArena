@@ -1,4 +1,25 @@
-ds_rootdir: &ds_rootdir /mnt/data6/chenghao/PCC_datasets/
+ds_rootdir: &ds_rootdir /itf-fi-ml/home/branisj/PCCArena/datasets/
+
+s3dis:
+    dataset_dir: !join [*ds_rootdir, s3dis]
+    dataset_w_normal_dir: !join [*ds_rootdir, s3dis_normal]
+    test_pattern: '*.ply'
+    scale: 1024
+    color: False
+
+blensor_no_noise:
+    dataset_dir: !join [*ds_rootdir, blensor_no_noise]
+    dataset_w_normal_dir: !join [*ds_rootdir, blensor_no_noise_normal]
+    test_pattern: '*.ply'
+    scale: 1024
+    color: False
+
+blensor:
+    dataset_dir: !join [*ds_rootdir, blensor2]
+    dataset_w_normal_dir: !join [*ds_rootdir, blensor_normal]
+    test_pattern: '*.ply'
+    scale: 1024
+    color: False
 
 Sample_SNC:
     dataset_dir: !join [*ds_rootdir, SNC_scale1024]
@@ -75,6 +96,13 @@ MN40_Test100:
 #     test_pattern: '**/test/*.ply'
 #     scale: 1024
 #     color: False
+
+CAPOD:
+    dataset_dir: /scratch/users/branisj/CAPOD_sampled_1024/color
+    dataset_w_normal_dir: /scratch/users/branisj/CAPOD_sampled_1024/color_normal
+    test_pattern: '**/*.ply'
+    scale: 1024
+    color: False
 
 CAPOD_10:
     dataset_dir: /mnt/data5/chenghao/CAPOD_scale1024_sample10

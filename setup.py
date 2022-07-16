@@ -54,7 +54,7 @@ def setup_config(args):
         # the python path to corresponding conda environments.
         find_and_replace(
             str(cfg), 'python: ',
-            f"/home/{getpass.getuser()}/anaconda3/envs/"
+            f"/itf-fi-ml/home/{getpass.getuser()}/.conda/envs/"
             + f"{Path(cfg).stem}/bin/python"
         )
     

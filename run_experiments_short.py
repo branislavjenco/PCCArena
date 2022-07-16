@@ -16,10 +16,12 @@ def main():
     LOGGING_CONFIG = get_logging_config('utils/logging.conf')
     logging.config.dictConfig(LOGGING_CONFIG)
 
-    draco = Draco()
-    for rate in range(1):
-        draco.rate = f'r{rate+1}'
-        draco.run_dataset('Sample_SNC', 'experiments')
+    #draco = Draco()
+    #draco.debug = True
+    #for rate in range(1):
+        #draco.rate = f'r{rate+1}'
+        #draco.run_dataset('Sample_SNC', 'experiments')
+        #draco.run_dataset('s3dis', 'experiments')
         # draco.run_dataset('Debug_SNC', 'experiments')
         # draco.run_dataset('Debug_SNCC', 'experiments')
         # draco.run_dataset('SNC_Test100', 'experiments')
@@ -35,10 +37,12 @@ def main():
         # draco.run_dataset('8i_soldier_geo_25', 'experiments')
         # draco.run_dataset('8i_redandblack_geo_25', 'experiments')
         
-    gpcc = GPCC()
-    for rate in range(1):
-        gpcc.rate = f'r{rate+1}'
-        gpcc.run_dataset('Sample_SNC', 'experiments')
+    #gpcc = GPCC()
+    #gpcc.debug = True
+    #for rate in range(1):
+        #gpcc.rate = f'r{rate+1}'
+        #gpcc.run_dataset('Sample_SNC', 'experiments')
+        #gpcc.run_dataset('s3dis', 'experiments')
         # gpcc.run_dataset('Debug_SNC', 'experiments')
         # gpcc.run_dataset('Debug_SNCC', 'experiments')
         # gpcc.run_dataset('SNC_Test100', 'experiments')
@@ -54,22 +58,25 @@ def main():
         # gpcc.run_dataset('8i_soldier_geo_25', 'experiments')
         # gpcc.run_dataset('8i_redandblack_geo_25', 'experiments')
 
-    vpcc = VPCC()
-    for rate in range(1):
-        vpcc.rate = f'r{rate+1}'
-        vpcc.run_dataset('Debug_SNCC', 'experiments')
+    #vpcc = VPCC()
+    #vpcc.debug = True
+    #for rate in range(1):
+        #vpcc.rate = f'r{rate+1}'
+        #vpcc.run_dataset('Sample_SNC', 'experiments')
+        # vpcc.run_dataset('Debug_SNCC', 'experiments')
         # vpcc.run_dataset('SNCC_Test100', 'experiments')
         # vpcc.run_dataset('8i_longdress_25', 'experiments')
         # vpcc.run_dataset('8i_loot_25', 'experiments')
         # vpcc.run_dataset('8i_soldier_25', 'experiments')
         # vpcc.run_dataset('8i_redandblack_25', 'experiments')
 
-    # geocnn_v1 = GeoCNNv1()
-    # for rate in range(1):
-    #     geocnn_v1.rate = f'r{rate+1}'
-    #     # `nbprocesses` depends on your available memory
-    #     # 1 process may cost up to 51 GB memory
-    #     geocnn_v1.run_dataset('Sample_SNC', 'experiments', nbprocesses=1)
+    #geocnn_v1 = GeoCNNv1()
+    #geocnn_v1.debug = True
+    #for rate in range(1):
+        #geocnn_v1.rate = f'r{rate+1}'
+        # `nbprocesses` depends on your available memory
+        # 1 process may cost up to 51 GB memory
+        #geocnn_v1.run_dataset('Sample_SNC', 'experiments', nbprocesses=1)
     #     geocnn_v1.run_dataset('Debug_SNC', 'experiments', nbprocesses=1)
         # geocnn_v1.run_dataset('SNC_Test100', 'experiments', nbprocesses=1)
         # geocnn_v1.run_dataset('MN40_Test100', 'experiments', nbprocesses=1)
@@ -80,9 +87,11 @@ def main():
         # geocnn_v1.run_dataset('8i_redandblack_geo_25', 'experiments', nbprocesses=1)
 
     geocnn_v2 = GeoCNNv2()
+    geocnn_v2.debug = True
     for rate in range(1):
         geocnn_v2.rate = f'r{rate+1}'
         geocnn_v2.run_dataset('Sample_SNC', 'experiments')
+        #geocnn_v2.run_dataset('s3dis', 'experiments')
         # geocnn_v2.run_dataset('Debug_SNC', 'experiments')
         # geocnn_v2.run_dataset('SNC_Test100', 'experiments')
         # geocnn_v2.run_dataset('MN40_Test100', 'experiments')
@@ -92,10 +101,12 @@ def main():
         # geocnn_v2.run_dataset('8i_soldier_geo_25', 'experiments')
         # geocnn_v2.run_dataset('8i_redandblack_geo_25', 'experiments')
 
-    pcgc_v1 = PCGCv1()
-    for rate in range(1):
-        pcgc_v1.rate = f'r{rate+1}'
-        pcgc_v1.run_dataset('Sample_SNC', 'experiments')
+    #pcgc_v1 = PCGCv1()
+    #pcgc_v1.debug = True
+    #for rate in range(1):
+        #pcgc_v1.rate = f'r{rate+1}'
+        #pcgc_v1.run_dataset('Sample_SNC', 'experiments')
+        # pcgc_v1.run_dataset('s3dis', 'experiments')
         # pcgc_v1.run_dataset('Debug_SNC', 'experiments')
         # pcgc_v1.run_dataset('SNC_Test100', 'experiments')
         # pcgc_v1.run_dataset('MN40_Test100', 'experiments')
@@ -105,10 +116,11 @@ def main():
         # pcgc_v1.run_dataset('8i_soldier_geo_25', 'experiments')
         # pcgc_v1.run_dataset('8i_redandblack_geo_25', 'experiments')
     
-    pcgc_v2 = PCGCv2()
-    for rate in range(1):
-        pcgc_v2.rate = f'r{rate+1}'
-        pcgc_v2.run_dataset('Sample_SNC', 'experiments')
+    #pcgc_v2 = PCGCv2()
+    #pcgc_v2.debug = True
+    #for rate in range(1):
+        #pcgc_v2.rate = f'r{rate+1}'
+        #pcgc_v2.run_dataset('Sample_SNC', 'experiments')
         # pcgc_v2.run_dataset('Debug_SNC', 'experiments')
         # pcgc_v2.run_dataset('SNC_Test100', 'experiments')
         # pcgc_v2.run_dataset('MN40_Test100', 'experiments')

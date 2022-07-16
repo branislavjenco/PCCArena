@@ -8,7 +8,7 @@ from typing import Union
 from pathlib import Path
 import numpy.typing as npt
 # from pyntcloud import PyntCloud
-import open3d as o3d
+#import open3d as o3d
 
 logger = logging.getLogger(__name__)
 
@@ -82,14 +82,19 @@ def calculate_normal(
     # workaround for using xvfb along with multiprocess
     # ref:https://stackoverflow.com/a/41276014
     # Inject environment variable `DISPLAY`.
-    env = dict(os.environ, DISPLAY=str(display_id))
+    env = {
+        **os.environ,
+        "DISPLAY": str(display_id)
+    }
     
     infile = Path(src_dir).joinpath(pc_file)
     outfile = Path(dest_dir).joinpath(pc_file).with_suffix('.ply')
     outfile.parent.mkdir(parents=True, exist_ok=True)
     
     cmd = [
-        'cloudcompare.CloudCompare',
+        'xvfb-run',
+        '-a',
+        '/itf-fi-ml/home/branisj/CloudCompare/build/qCC/CloudCompare',
         '-SILENT',
         '-AUTO_SAVE', 'OFF',
         '-O', infile,
@@ -122,7 +127,7 @@ def calculate_normal(
         print('\n'.join(lines))
         
         raise e
-
+"""
 def normalize(
         pc_file: Union[str, Path],
         src_dir: Union[str, Path],
@@ -139,3 +144,4 @@ def normalize(
     points = points / np.max(points) * scale
     pc.points = o3d.utility.Vector3dVector(points)
     o3d.io.write_point_cloud(outfile, pc)
+"""

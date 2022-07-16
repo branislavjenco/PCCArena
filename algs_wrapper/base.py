@@ -331,7 +331,6 @@ class Base(metaclass=abc.ABCMeta):
             env = dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu_id))
         else:
             env = os.environ
-        
         try:
             start_time = time.time()
             _ = sp.run(

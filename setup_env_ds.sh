@@ -18,7 +18,7 @@ conda env remove -n PCGCv2
 conda env create -f cfgs/conda_env/GeoCNNv1.yml
 conda env create -f cfgs/conda_env/GeoCNNv2.yml
 conda env create -f cfgs/conda_env/PCGCv1.yml
-conda env create -f cfgs/conda_env/PCGCv2.yml
+#conda env create -f cfgs/conda_env/PCGCv2.yml
 
 
 
@@ -38,9 +38,9 @@ mkdir build && cd build && cmake .. && make
 cd ../..
 
 ## VPCC
-git clone --depth 1 --branch release-v12.0 https://github.com/MPEGGroup/mpeg-pcc-tmc2.git VPCC
+git clone --depth 1 --branch release-v15.0 https://github.com/MPEGGroup/mpeg-pcc-tmc2.git VPCC
 cd VPCC
-./build.sh
+#./build.sh
 cd ..
 
 ## GeoCNNv1

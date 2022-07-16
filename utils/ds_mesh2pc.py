@@ -28,7 +28,8 @@ def work(filepath, args):
     outfile_color_normal.parent.mkdir(parents=True, exist_ok=True)
 
     cmd = [
-        'cloudcompare.CloudCompare',
+        'xvfb-run',
+        '/itf-fi-ml/home/branisj/CloudCompare/build/qCC/CloudCompare',
         '-SILENT',
         '-AUTO_SAVE', 'OFF',
         '-O', infile,
@@ -124,8 +125,8 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    # workaround of xvfb-run working with multiprocessing
-    # os.system("Xvfb :99 &")
+    #workaround of xvfb-run working with multiprocessing
+    #os.system("Xvfb :90 &")
 
     # glob for mesh filename only
     mesh_files = [path.relative_to(args.src_dir) for path in Path(args.src_dir).rglob("*.obj")]
